@@ -19,4 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Optional: Log to console to verify it works during testing
         console.log("Form successfully submitted. Ready to audit the prospect's numbers.");
     });
-});
+    const observerOptions = {
+    threshold: 0.6 // Trigger when 60% of the card is visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        } else {
+            // Optional: remove the class when scrolling away
+            entry.target.classList.remove('is-visible');
+        }
+    });
+}, observerOptions);
+
+// Tell the observer to watch all your cards
+document.querySelectorAll('.card').forEach(card => {
+    observer.observe(card);
+});});
