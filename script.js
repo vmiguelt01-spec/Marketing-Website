@@ -1,40 +1,36 @@
-// Wait for the DOM to fully load before attaching events
-document.addEventListener('DOMContentLoaded', () => {
+// This ensures the script waits for the website to fully load
+window.addEventListener('load', () => {
     
-    const leadForm = document.getElementById('leadForm');
-    const formMessage = document.getElementById('formMessage');
-
-    // Handle form submission
-    leadForm.addEventListener('submit', function(event) {
-        // Prevent the default form submission (which refreshes the page)
-        event.preventDefault();
-
-        // Here, you would normally send the data to a server using fetch() or an API
-        // For example: capturing the budget range and website URL.
-        
-        // Hide the form and show the success message to the user
-        leadForm.style.display = 'none';
-        formMessage.classList.remove('hidden');
-
-        // Optional: Log to console to verify it works during testing
-        console.log("Form successfully submitted. Ready to audit the prospect's numbers.");
-    });
     const observerOptions = {
-    threshold: 0.6 // Trigger when 60% of the card is visible
-};
+        // 0.2 means trigger when just 20% of the card is visible (better for mobile)
+        threshold: 0.2 
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        } else {
-            // Optional: remove the class when scrolling away
-            entry.target.classList.remove('is-visible');
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // This adds the green box class we wrote in CSS
+                entry.target.classList.add('is-visible');
+            } else {
+                // Optional: Turns it off when you scroll past
+                entry.target.classList.remove('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    // Find every card and start watching it
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        observer.observe(card);
     });
-}, observerOptions);
 
-// Tell the observer to watch all your cards
-document.querySelectorAll('.card').forEach(card => {
-    observer.observe(card);
-});});
+    // Handle the Contact Form separately
+    const leadForm = document.getElementById('leadForm');
+    if(leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            leadForm.style.display = 'none';
+            document.getElementById('formMessage').classList.remove('hidden');
+        });
+    }
+});
