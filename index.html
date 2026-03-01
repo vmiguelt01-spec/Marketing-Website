@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Digital | Marketing for Service Businesses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <h1 class="logo">Growth Digital</h1>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#process">The Process</a></li>
+                    <li><a href="#contact" class="btn-primary">Contact Us Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Stop Wasting Ad Spend. Start Booking More Clients.</h2>
+            <p>We manage marketing for service-based businesses. Strict budget control, measurable ROI, and an exclusive focus on generating high-quality leads.</p>
+            <a href="#contact" class="btn-primary large-btn">Claim Your Free Account Audit</a>
+        </div>
+    </section>
+
+    <section id="social" class="services" style="background-color: var(--bg-card); border-top: 1px solid #222; border-bottom: 1px solid #222;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Local Authority & Social Management</h2>
+                <p>Turning your digital profiles into trust-building assets that convert casual viewers into booked appointments.</p>
+            </div>
+            <div class="grid">
+                <div class="card" style="background-color: var(--bg-dark);">
+                    <h4>Google Business Profile</h4>
+                    <p>The crown jewel of local search. We optimize your profile to dominate the "near me" map pack, manage your customer reviews, and post weekly updates so you are the obvious choice when locals need immediate service.</p>
+                </div>
+                
+                <div class="card" style="background-color: var(--bg-dark);">
+                    <h4>Facebook Community</h4>
+                    <p>Keep your business top-of-mind within your city. We share seasonal maintenance tips, service promotions, and company updates that turn past clients into repeat customers and vocal local advocates.</p>
+                </div>
+                
+                <div class="card" style="background-color: var(--bg-dark);">
+                    <h4>Instagram Portfolio</h4>
+                    <p>Service businesses thrive on visual proof. We curate a professional feed of your best on-site work, before-and-after transformations, and team highlights that prove your reliability and high-quality standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Where We Drive Revenue</h2>
+                <p>Data-driven acquisition systems built specifically for service providers.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h4>Google Ads (Search Intent)</h4>
+                    <p>When a potential client actively needs your expertise, they search Google. We place your business at the very top of those high-intent local searches so your phone rings, not your competitor's.</p>
+                </div>
+                <div class="card">
+                    <h4>Facebook Ads (Local Awareness)</h4>
+                    <p>We build a predictable pipeline of leads by targeting your ideal demographic in your specific service area, keeping your team active and your appointment calendar completely full.</p>
+                </div>
+                <div class="card">
+                    <h4>Strict Financial Tracking</h4>
+                    <p>No vanity metrics. We track exactly how much it costs to acquire a new client, managing your marketing budget with bottom-line precision to ensure maximum profitability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container form-container">
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 2rem; color: #FFFFFF; text-align: center;">Let's talk!</h3>
+            </div>
+            <p style="text-align: center; margin-bottom: 2rem;">Fill out the form below for a complimentary consultation.</p>
+            
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="name">Full Name & Company</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe, Elite Service Co.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="url">Current Website URL</label>
+                    <input type="url" id="url" name="url" placeholder="https://www.yourwebsite.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Monthly Marketing Budget</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select a range...</option>
+                        <option value="Under $1,000">Under $1,000</option>
+                        <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                        <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+                        <option value="$5,000+">$5,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="focus">Most Profitable Service</label>
+                    <input type="text" id="focus" name="focus" required placeholder="e.g., High-Ticket Installs or Priority Consultations">
+                </div>
+
+                <button type="submit" class="btn-primary submit-btn">Contact Us Now</button>
+            </form>
+            <div id="formMessage" class="hidden">Thanks! We'll reach out shortly.</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Growth Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
