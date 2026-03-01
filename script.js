@@ -1,6 +1,5 @@
 // This ensures the script waits for the website to fully load
-window.addEventListener('load', () => {
-    
+window.addEventListener('load', () => {console.log("JavaScript is successfully linked and running!"); // DEBUG LINE    
     const observerOptions = {
         // 0.2 means trigger when just 20% of the card is visible (better for mobile)
         threshold: 0.2 
